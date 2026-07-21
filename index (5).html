@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="South East Engineering Solutions - 15+ years of FEA, CE Marking, and technical expertise for mission-critical products.">
+    <title>South East Engineering Solutions | Engineering Excellence</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #185fa5;
+            --primary-dark: #0c447c;
+            --primary-light: #378add;
+            --accent: #ff6b35;
+            --text: #2c2c2a;
+            --text-light: #5f5e5a;
+            --bg: #fafaf7;
+            --bg-dark: #f5f3ed;
+            --border: #e5e3db;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #85b7eb;
+                --primary-dark: #5a8ec9;
+                --text: #e8e6e0;
+                --text-light: #a9a9a3;
+                --bg: #1a1a18;
+                --bg-dark: #242420;
+                --border: #3a3a36;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            color: var(--text);
+            background: var(--bg);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1400 1400' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='bgGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23185fa5;stop-opacity:0.03'/%3E%3Cstop offset='50%25' style='stop-color:%23378add;stop-opacity:0.02'/%3E%3Cstop offset='100%25' style='stop-color:%23185fa5;stop-opacity:0.01'/%3E%3C/linearGradient%3E%3Cpattern id='grid' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 100 0 L 0 0 0 100' fill='none' stroke='%23185fa5' stroke-width='0.5' opacity='0.03'/%3E%3C/pattern%3E%3Cfilter id='fblur'%3E%3CfeGaussianBlur in='SourceGraphic' stdDeviation='1.5'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='1400' height='1400' fill='url(%23bgGrad)'/%3E%3Crect width='1400' height='1400' fill='url(%23grid)'/%3E%3Cg opacity='0.04' filter='url(%23fblur)'%3E%3Ccircle cx='200' cy='200' r='150' stroke='%23185fa5' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='1200' cy='1200' r='200' stroke='%23378add' stroke-width='1.5' fill='none'/%3E%3Crect x='500' y='600' width='250' height='200' stroke='%23185fa5' stroke-width='1' fill='none' transform='rotate(20 625 700)'/%3E%3Cpolygon points='700,300 750,350 700,400 650,350' stroke='%23378add' stroke-width='1' fill='none'/%3E%3Ccircle cx='300' cy='1100' r='100' stroke='%23185fa5' stroke-width='1' fill='none'/%3E%3Ccircle cx='1100' cy='300' r='130' stroke='%23378add' stroke-width='1' fill='none'/%3E%3C/g%3E%3Cg stroke='%23185fa5' stroke-width='0.3' opacity='0.02'%3E%3Cpath d='M 0 0 L 1400 1400'/%3E%3Cpath d='M 1400 0 L 0 1400'/%3E%3Cpath d='M 700 0 L 700 1400'/%3E%3Cpath d='M 0 700 L 1400 700'/%3E%3C/g%3E%3C/svg%3E");
+            background-attachment: fixed;
+            background-size: 1400px 1400px;
+            background-position: center;
+            background-repeat: repeat;
+        }
+
+        /* === HEADER === */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.2rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            header {
+                background: rgba(36, 36, 32, 0.98);
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        nav {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 3.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.95rem;
+            font-weight: 600;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* === HERO === */
+        .hero {
+            padding: 7rem 2rem;
+            background: linear-gradient(135deg, rgba(250, 250, 247, 0.95) 0%, rgba(245, 243, 237, 0.95) 100%);
+            text-align: center;
+            border-bottom: 2px solid var(--border);
+            position: relative;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .hero {
+                background: linear-gradient(135deg, rgba(26, 26, 24, 0.95) 0%, rgba(36, 36, 32, 0.95) 100%);
+            }
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1.5px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            gap: 1.5rem;
+        }
+
+        .btn {
+            padding: 1.1rem 2.8rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 8px 20px rgba(24, 95, 165, 0.25);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(24, 95, 165, 0.35);
+            background: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* === STAT BARS === */
+        /* === PROCESS SECTION === */
+        .process {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .process {
+                background: var(--bg-dark);
+            }
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 5px;
+            background: var(--primary);
+            margin: 0.8rem auto 0;
+            border-radius: 3px;
+        }
+
+        .section-header p {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 1.5rem auto 0;
+        }
+
+        .process-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            position: relative;
+        }
+
+        .process-item {
+            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-dark) 100%);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .process-icon {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 1rem;
+            display: block;
+            opacity: 0.9;
+            transition: transform 0.3s ease;
+        }
+
+        .process-item:hover .process-icon {
+            transform: scale(1.1);
+        }
+
+        .process-item::before {
+            content: attr(data-step);
+            position: absolute;
+            top: -15px;
+            left: 2.5rem;
+            background: var(--primary);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .process-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(24, 95, 165, 0.15);
+            border-color: var(--primary);
+        }
+
+        .process-item h3 {
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .process-item p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* === EXPERTISE CARDS === */
+        .expertise {
+            padding: 6rem 2rem;
+            background: var(--bg-dark);
+        }
+
+        .expertise-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .expertise-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 14px;
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .expertise-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1.5rem;
+            display: block;
+            opacity: 0.85;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .expertise-card:hover .expertise-icon {
+            transform: scale(1.15) rotate(5deg);
+            opacity: 1;
+        }
+
+        text {
+            font-family: inherit;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            text {
+                fill: var(--text);
+            }
+        }
+
+        /* === CLIENT CALIBER SECTION === */
+        .client-caliber {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .client-caliber {
+                background: var(--bg-dark);
+            }
+        }
+
+        .caliber-card {
+            background: linear-gradient(135deg, #f5f3ed 0%, #fafaf7 100%);
+            padding: 2.5rem;
+            border-radius: 14px;
+            border-left: 5px solid #185fa5;
+            transition: all 0.3s ease;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .caliber-card {
+                background: linear-gradient(135deg, #2a2a24 0%, #1a1a18 100%);
+            }
+        }
+
+        .caliber-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(24, 95, 165, 0.15);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .expertise-card {
+                background: var(--bg);
+            }
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(24, 95, 165, 0.15);
+        }
+
+        .expertise-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .expertise-list {
+            list-style: none;
+        }
+
+        .expertise-list li {
+            padding: 0.6rem 0;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .expertise-list li:last-child {
+            border-bottom: none;
+        }
+
+        .expertise-list strong {
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        /* === CASE STUDIES === */
+        .case-studies {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .case-studies {
+                background: var(--bg-dark);
+            }
+        }
+
+        .case-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .case-card {
+            background: linear-gradient(135deg, var(--bg) 0%, var(--bg-dark) 100%);
+            border: 2px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: all 0.35s ease;
+        }
+
+        .case-visual {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, rgba(24, 95, 165, 0.06) 0%, rgba(55, 138, 221, 0.08) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 2px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-visual svg {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.4s ease;
+        }
+
+        .case-card:hover .case-visual svg {
+            transform: scale(1.08);
+        }
+
+        .case-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(24, 95, 165, 0.2);
+            border-color: var(--primary);
+        }
+
+        .case-header {
+            padding: 2.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .case-category {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+        }
+
+        .case-header h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.8rem;
+            color: var(--text);
+        }
+
+        .case-body {
+            padding: 2rem;
+        }
+
+        .case-challenge {
+            margin-bottom: 1.5rem;
+        }
+
+        .case-challenge strong {
+            display: block;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-result {
+            background: linear-gradient(135deg, rgba(24, 95, 165, 0.08) 0%, rgba(55, 138, 221, 0.08) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .case-result strong {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        /* === TEAM SECTION === */
+        .team {
+            padding: 6rem 2rem;
+            background: var(--bg-dark);
+        }
+
+        .team-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .team-bio h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .team-bio p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        .credentials {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .credentials {
+                background: var(--bg);
+            }
+        }
+
+        .credentials h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .credentials-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .credentials-list li {
+            padding: 0.8rem;
+            background: var(--bg);
+            border-left: 3px solid var(--primary);
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .credentials-list li {
+                background: var(--bg-dark);
+            }
+        }
+
+        .credentials-list li:first-child {
+            animation-delay: 0s;
+        }
+
+        .credentials-list li:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .credentials-list li:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .team-highlight {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .highlight-box {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 12px;
+            text-align: center;
+            border-top: 4px solid var(--primary);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .highlight-box {
+                background: var(--bg);
+            }
+        }
+
+        .highlight-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-text {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .team-content {
+                grid-template-columns: 1fr;
+            }
+
+            .team-highlight {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* === CONTACT SECTION === */
+        .contact {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .contact {
+                background: var(--bg-dark);
+            }
+        }
+
+        .contact-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        input, textarea {
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: var(--bg);
+            color: var(--text);
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(24, 95, 165, 0.1);
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        .contact-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+
+        .contact-item p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .contact-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-dark);
+        }
+
+        @media (max-width: 768px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* === FOOTER === */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* === UTILITIES === */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 4rem 2rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <img src="logo.png" alt="SEE Solutions">
+            </a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#cases">Cases</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Engineering Excellence for Mission-Critical Products</h1>
+            <p class="hero-subtitle">15+ years delivering structural analysis, regulatory compliance, and technical documentation across aerospace, automotive, and marine sectors.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Start a project</a>
+                <a href="#services" class="btn btn-secondary">See our services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive engineering solutions across structural analysis, regulatory documentation, and technical compliance.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-item" data-step="1">
+                    <svg class="process-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="30" r="8" fill="#185fa5"/>
+                        <path d="M50 40 L50 70 M30 50 L70 50 M35 55 L50 70 L65 55" stroke="#185fa5" stroke-width="2" fill="none"/>
+                        <circle cx="50" cy="50" r="20" stroke="#185fa5" stroke-width="2" fill="none" opacity="0.3"/>
+                    </svg>
+                    <h3>Structural FEA & Analysis</h3>
+                    <p>Advanced finite element analysis for frames, lifting structures, pressure vessels, and composite assemblies. Stress analysis, optimization, and fatigue evaluation across aerospace, automotive, marine, and industrial applications.</p>
+                </div>
+                <div class="process-item" data-step="2">
+                    <svg class="process-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="20" width="60" height="60" stroke="#185fa5" stroke-width="2" fill="none"/>
+                        <line x1="20" y1="40" x2="80" y2="40" stroke="#185fa5" stroke-width="1.5"/>
+                        <line x1="20" y1="55" x2="80" y2="55" stroke="#185fa5" stroke-width="1.5"/>
+                        <line x1="20" y1="70" x2="80" y2="70" stroke="#185fa5" stroke-width="1.5"/>
+                        <circle cx="35" cy="32" r="2" fill="#185fa5"/>
+                    </svg>
+                    <h3>CE Marking & Technical Documentation</h3>
+                    <p>Complete CE marking support under Machinery Directive 2006/42/EC. Risk assessments, conformity declarations, technical files, assembly instructions, and maintenance documentation. EN 13155, ISO 12944, and DNV-compliant deliverables.</p>
+                </div>
+                <div class="process-item" data-step="3">
+                    <svg class="process-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M30 70 L50 30 L70 70" stroke="#185fa5" stroke-width="2" fill="none"/>
+                        <line x1="35" y1="55" x2="65" y2="55" stroke="#185fa5" stroke-width="2"/>
+                        <circle cx="50" cy="45" r="3" fill="#185fa5"/>
+                        <path d="M45 75 Q50 80 55 75" stroke="#185fa5" stroke-width="2" fill="none"/>
+                    </svg>
+                    <h3>Regulatory Technical Documentation</h3>
+                    <p>Preparation and management of technical documentation for regulatory submission. Vehicle homologation (UN R14/R16/R17), type-approval packages, seat certification, seatbelt anchorage validation, and compliance strategy for emerging mobility platforms.</p>
+                </div>
+                <div class="process-item" data-step="4">
+                    <svg class="process-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="30" stroke="#185fa5" stroke-width="2" fill="none"/>
+                        <path d="M35 50 L48 63 L70 40" stroke="#185fa5" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="50" cy="50" r="38" stroke="#185fa5" stroke-width="1" fill="none" opacity="0.3" stroke-dasharray="5,3"/>
+                    </svg>
+                    <h3>Mechanical Engineering Design</h3>
+                    <p>CAD modeling in SolidWorks and CATIA V5, GD&T specification, DFM/DFMA optimization, manufacturing cost analysis, tolerance stacks, and design documentation. Sheet metal, CNC machining, additive manufacturing, and assembly-ready deliverables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section id="expertise" class="expertise">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technical Expertise</h2>
+                <p>Deep competency across standards, software, and manufacturing disciplines.</p>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <svg class="expertise-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="30" stroke="#185fa5" stroke-width="2" fill="none"/>
+                        <line x1="30" y1="50" x2="70" y2="50" stroke="#185fa5" stroke-width="2"/>
+                        <line x1="50" y1="30" x2="50" y2="70" stroke="#185fa5" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="4" fill="#185fa5"/>
+                    </svg>
+                    <h3>Engineering Standards</h3>
+                    <ul class="expertise-list">
+                        <li><strong>ISO 1101</strong> — GDT & technical drawings</li>
+                        <li><strong>EN 1090-2</strong> — Welding execution</li>
+                        <li><strong>Eurocode 9</strong> — Aluminium structures</li>
+                        <li><strong>ISO 13849</strong> — Machinery safety</li>
+                    </ul>
+                </div>
+                <div class="expertise-card">
+                    <svg class="expertise-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25 35 L50 20 L75 35 L75 70 Q75 80 65 80 L35 80 Q25 80 25 70 Z" stroke="#185fa5" stroke-width="2" fill="none"/>
+                        <line x1="50" y1="20" x2="50" y2="80" stroke="#185fa5" stroke-width="1.5" opacity="0.5"/>
+                        <circle cx="50" cy="50" r="6" fill="#185fa5" opacity="0.6"/>
+                    </svg>
+                    <h3>Regulatory & Compliance</h3>
+                    <ul class="expertise-list">
+                        <li><strong>2006/42/EC</strong> — Machinery Directive</li>
+                        <li><strong>UN ECE</strong> — Vehicle homologation</li>
+                        <li><strong>ISO 12944</strong> — Corrosion protection</li>
+                        <li><strong>EN 13155</strong> — Lifting equipment</li>
+                    </ul>
+                </div>
+                <div class="expertise-card">
+                    <svg class="expertise-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="25" y="25" width="50" height="50" stroke="#185fa5" stroke-width="2" fill="none"/>
+                        <circle cx="50" cy="50" r="12" stroke="#185fa5" stroke-width="2" fill="none"/>
+                        <line x1="35" y1="35" x2="40" y2="40" stroke="#185fa5" stroke-width="1.5"/>
+                        <line x1="65" y1="65" x2="60" y2="60" stroke="#185fa5" stroke-width="1.5"/>
+                    </svg>
+                    <h3>CAD & Simulation</h3>
+                    <ul class="expertise-list">
+                        <li><strong>ANSYS Mechanical</strong> — FEA & optimization</li>
+                        <li><strong>SolidWorks</strong> — 3D design & assemblies</li>
+                        <li><strong>CATIA V5</strong> — Advanced surface modeling</li>
+                        <li><strong>GD&T</strong> — Tolerance specification</li>
+                    </ul>
+                </div>
+                <div class="expertise-card">
+                    <svg class="expertise-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M30 70 L50 20 L70 70 M40 50 L60 50" stroke="#185fa5" stroke-width="2" fill="none"/>
+                        <circle cx="50" cy="30" r="4" fill="#185fa5"/>
+                        <rect x="20" y="72" width="60" height="5" fill="#185fa5" opacity="0.3" rx="2"/>
+                    </svg>
+                    <h3>Manufacturing & DfM</h3>
+                    <ul class="expertise-list">
+                        <li><strong>DFMA</strong> — Cost & assembly optimization</li>
+                        <li><strong>Sheet Metal</strong> — Stamping & forming</li>
+                        <li><strong>CNC Machining</strong> — Tolerance stacks</li>
+                        <li><strong>FSW</strong> — Friction stir welding</li>
+                    </ul>
+                </div>
+                <div class="expertise-card">
+                    <svg class="expertise-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 20 L60 35 L75 35 L65 45 L70 60 L50 50 L30 60 L35 45 L25 35 L40 35 Z" stroke="#185fa5" stroke-width="1.5" fill="none"/>
+                        <circle cx="50" cy="50" r="25" stroke="#185fa5" stroke-width="1" fill="none" opacity="0.2"/>
+                    </svg>
+                    <h3>Additive Manufacturing</h3>
+                    <ul class="expertise-list">
+                        <li><strong>ISO/ASTM 52900</strong> — AM terminology</li>
+                        <li><strong>SLA/SLS/FDM</strong> — Process optimization</li>
+                        <li><strong>DfAM</strong> — Design for additive</li>
+                        <li><strong>Materials</strong> — Resin to titanium</li>
+                    </ul>
+                </div>
+                <div class="expertise-card">
+                    <svg class="expertise-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="35" cy="40" r="15" stroke="#185fa5" stroke-width="2" fill="none"/>
+                        <circle cx="65" cy="40" r="15" stroke="#185fa5" stroke-width="2" fill="none"/>
+                        <circle cx="50" cy="70" r="15" stroke="#185fa5" stroke-width="2" fill="none"/>
+                        <line x1="44" y1="47" x2="56" y2="47" stroke="#185fa5" stroke-width="1.5" opacity="0.5"/>
+                        <line x1="44" y1="57" x2="56" y2="57" stroke="#185fa5" stroke-width="1.5" opacity="0.5"/>
+                    </svg>
+                    <h3>Sectors & Industries</h3>
+                    <ul class="expertise-list">
+                        <li><strong>Aerospace</strong> — Structural integrity</li>
+                        <li><strong>Automotive</strong> — EV & motorsport</li>
+                        <li><strong>Marine</strong> — Hydrofoiling & vessels</li>
+                        <li><strong>Industrial</strong> — Tooling & lifting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASE STUDIES -->
+    <section id="cases" class="case-studies">
+        <div class="container">
+            <div class="section-header">
+                <h2>Selected Projects</h2>
+                <p>Recent engagements showcasing our depth across multiple sectors.</p>
+            </div>
+            <div class="case-grid">
+                <div class="case-card">
+                    <div class="case-visual">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&q=80" alt="Marine vessel" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="case-header">
+                        <div class="case-category">Marine Technology</div>
+                        <h3>Hydrofoil Lifting Cradle</h3>
+                    </div>
+                    <div class="case-body">
+                        <div class="case-challenge">
+                            <strong>Challenge</strong>
+                            <p>CE marking & corrosion protection for marine lifting equipment operating in saltwater environments (C5/Im2).</p>
+                        </div>
+                        <div class="case-result">
+                            <strong>Result</strong>
+                            <p>Complete EN 13155 & ISO 12944 compliance. Zinc-flake coating specification. DNV type-approval ready.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-visual">
+                        <img src="https://images.unsplash.com/photo-1560958089-b8a46dd52291?w=600&q=80" alt="EV charging" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="case-header">
+                        <div class="case-category">Electric Vehicles</div>
+                        <h3>EV Conversion Platform</h3>
+                    </div>
+                    <div class="case-body">
+                        <div class="case-challenge">
+                            <strong>Challenge</strong>
+                            <p>Structural analysis and drivetrain integration for custom EV conversion platform with novel powertrain mounting and battery integration.</p>
+                        </div>
+                        <div class="case-result">
+                            <strong>Result</strong>
+                            <p>Complete FEA validation, stress analysis, DFMA optimization. Manufacturing specifications and tolerance stacks for precision fit-up.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-visual">
+                        <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&q=80" alt="Car interior seat" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="case-header">
+                        <div class="case-category">Vehicle Homologation</div>
+                        <h3>Seat Bench Homologation</h3>
+                    </div>
+                    <div class="case-body">
+                        <div class="case-challenge">
+                            <strong>Challenge</strong>
+                            <p>UN R14/R16/R17 compliance for novel seating configuration with integrated seatbelt anchorage and structural validation.</p>
+                        </div>
+                        <div class="case-result">
+                            <strong>Result</strong>
+                            <p>Complete regulatory technical documentation package. Type-approval ready. Seatbelt strength analysis and anchorage certification.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-visual">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b2345699ed?w=600&q=80" alt="Autonomous robot" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="case-header">
+                        <div class="case-category">Autonomous Robotics</div>
+                        <h3>Last-Mile Delivery Platform</h3>
+                    </div>
+                    <div class="case-body">
+                        <div class="case-challenge">
+                            <strong>Challenge</strong>
+                            <p>Rapid design-to-production for composite chassis with integrated drivetrain & safety systems.</p>
+                        </div>
+                        <div class="case-result">
+                            <strong>Result</strong>
+                            <p>DFMA optimization cutting 35% manufacturing cost. GD&T specification for high-precision fit-up.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-visual">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="Testing equipment" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                    </div>
+                    <div class="case-header">
+                        <div class="case-category">Marine Tooling</div>
+                        <h3>Hydrofoil Testing Rig & CE Mark</h3>
+                    </div>
+                    <div class="case-body">
+                        <div class="case-challenge">
+                            <strong>Challenge</strong>
+                            <p>Design specialized testing rig for hydrofoil structural validation with integrated CE marking compliance for operator safety and load handling.</p>
+                        </div>
+                        <div class="case-result">
+                            <strong>Result</strong>
+                            <p>Complete testing rig design with FEA validation. EN 13155 & 2006/42/EC compliance. Risk assessment and technical documentation package ready for CE certification.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENT CALIBER SECTION -->
+    <section id="clients" class="client-caliber">
+        <div class="container">
+            <div class="section-header">
+                <h2>Client Portfolio</h2>
+                <p>Experience across the world's most demanding engineering sectors.</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; max-width: 1200px; margin: 0 auto;">
+                <div class="caliber-card">
+                    <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 1rem;">
+                        <rect x="8" y="8" width="28" height="28" fill="#185fa5" opacity="0.8"/>
+                        <rect x="20" y="8" width="16" height="28" fill="white" opacity="0.8"/>
+                        <line x1="24" y1="42" x2="24" y2="52" stroke="#185fa5" stroke-width="2"/>
+                    </svg>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #185fa5;">Formula 1 Motorsport</h3>
+                    <p style="color: #5f5e5a; line-height: 1.8;">Elite racing programs demanding sub-millimeter precision and maximum performance optimization. Structural analysis and component validation for competitive platforms.</p>
+                </div>
+
+                <div class="caliber-card">
+                    <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 1rem;">
+                        <circle cx="30" cy="30" r="14" stroke="#185fa5" stroke-width="2" fill="none"/>
+                        <circle cx="30" cy="30" r="6" fill="#185fa5"/>
+                        <g stroke="#185fa5" stroke-width="2">
+                            <line x1="30" y1="10" x2="30" y2="4"/>
+                            <line x1="30" y1="56" x2="30" y2="50"/>
+                            <line x1="50" y1="30" x2="56" y2="30"/>
+                            <line x1="4" y1="30" x2="10" y2="30"/>
+                            <line x1="44" y1="16" x2="48" y2="12"/>
+                            <line x1="12" y1="48" x2="16" y2="44"/>
+                            <line x1="44" y1="44" x2="48" y2="48"/>
+                            <line x1="12" y1="12" x2="16" y2="16"/>
+                        </g>
+                    </svg>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #185fa5;">Transmission & Drivetrain</h3>
+                    <p style="color: #5f5e5a; line-height: 1.8;">Major gearbox and drivetrain manufacturers. Structural FEA, manufacturing optimization, and homologation support for high-performance powertrains.</p>
+                </div>
+
+                <div class="caliber-card">
+                    <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 1rem;">
+                        <path d="M30 8 L38 28 L56 32 L38 36 L30 52 L22 36 L4 32 L22 28 Z" fill="#185fa5" opacity="0.8"/>
+                        <circle cx="30" cy="32" r="4" fill="white"/>
+                    </svg>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #185fa5;">Aerospace</h3>
+                    <p style="color: #5f5e5a; line-height: 1.8;">International aerospace manufacturers with rigorous structural certification requirements. FEA expertise across composite and metallic structures.</p>
+                </div>
+
+                <div class="caliber-card">
+                    <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 1rem;">
+                        <rect x="16" y="12" width="28" height="20" rx="2" fill="#185fa5" opacity="0.8"/>
+                        <rect x="12" y="32" width="36" height="16" rx="2" fill="#185fa5" opacity="0.6"/>
+                        <circle cx="22" cy="18" r="3" fill="white"/>
+                        <circle cx="38" cy="18" r="3" fill="white"/>
+                        <rect x="18" y="48" width="4" height="6" fill="#185fa5" opacity="0.8"/>
+                        <rect x="38" y="48" width="4" height="6" fill="#185fa5" opacity="0.8"/>
+                    </svg>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #185fa5;">Autonomous Vehicles</h3>
+                    <p style="color: #5f5e5a; line-height: 1.8;">Autonomous vehicle and robotics companies. Structural design, homologation strategy, and regulatory pathway support for emerging mobility platforms.</p>
+                </div>
+
+                <div class="caliber-card">
+                    <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 1rem;">
+                        <path d="M12 44 L15 20 L30 10 L45 20 L48 44 Z" fill="#185fa5" opacity="0.8"/>
+                        <line x1="30" y1="10" x2="30" y2="4" stroke="#185fa5" stroke-width="2"/>
+                        <path d="M30 6 L26 8 L34 8 Z" fill="#185fa5"/>
+                        <line x1="10" y1="46" x2="50" y2="46" stroke="#185fa5" stroke-width="2" opacity="0.6"/>
+                    </svg>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #185fa5;">Marine Technology</h3>
+                    <p style="color: #5f5e5a; line-height: 1.8;">Innovative marine firms in hydrofoiling and advanced vessel design. CE marking, corrosion protection, and structural validation for ocean environments.</p>
+                </div>
+
+                <div class="caliber-card">
+                    <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 1rem;">
+                        <path d="M48 12 C52 8 56 12 52 16 L32 36 C28 32 20 40 16 44 C12 48 8 52 4 56" fill="none" stroke="#185fa5" stroke-width="2.5" stroke-linecap="round"/>
+                        <circle cx="48" cy="12" r="4" fill="#185fa5"/>
+                        <circle cx="16" cy="44" r="4" fill="#185fa5" opacity="0.6"/>
+                    </svg>
+                    <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #185fa5;">Industrial & Tooling</h3>
+                    <p style="color: #5f5e5a; line-height: 1.8;">Precision tooling, lifting equipment, and industrial automation manufacturers. DFMA optimization, CE compliance, and manufacturing readiness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team">
+        <div class="container">
+            <div class="team-content">
+                <div class="team-bio">
+                    <h3>Founder & Lead Engineer</h3>
+                    <p>With 15+ years in the field, our founder holds an MSc in Motorsport Engineering (Distinction) from the University of Oxford and a degree in Mechanical Engineering from UPCT. Professional member of COITRM (Colegiado nº 7.137). He has navigated complex engineering challenges across demanding sectors: aerospace manufacturing, Formula 1 motorsport, renewable energy, and marine innovation. This breadth spans the full product lifecycle: from first-principles FEA and design optimization, through regulatory strategy and homologation, to manufacturing readiness and cost optimization.</p>
+                    <p>The foundation is rigorous. The delivery is meticulous. The commitment is uncompromising.</p>
+                    
+                    <div class="credentials">
+                        <h4>Professional Credentials</h4>
+                        <ul class="credentials-list">
+                            <li>Professional Liability Insurance (Worldwide)</li>
+                            <li>15+ Years Industry Experience</li>
+                        </ul>
+                    <div class="credentials" style="margin-top: 2rem; background: linear-gradient(135deg, rgba(24, 95, 165, 0.08) 0%, rgba(55, 138, 221, 0.08) 100%);">
+                        <h4>Current Geographic Presence</h4>
+                        <ul class="credentials-list" style="grid-template-columns: 1fr;">
+                            <li><svg width="24" height="16" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 0.5rem; vertical-align: middle;">
+                                <!-- Blue background -->
+                                <rect width="60" height="40" fill="#012169"/>
+                                <!-- White saltire (St Andrew's Cross - Scotland) -->
+                                <path d="M0 0 L60 40 M60 0 L0 40" stroke="white" stroke-width="8"/>
+                                <!-- Red saltire (St Patrick's Cross - Ireland) -->
+                                <path d="M0 0 L60 40 M60 0 L0 40" stroke="#C8102E" stroke-width="5"/>
+                                <!-- White cross -->
+                                <line x1="30" y1="0" x2="30" y2="40" stroke="white" stroke-width="6"/>
+                                <line x1="0" y1="20" x2="60" y2="20" stroke="white" stroke-width="6"/>
+                                <!-- Red cross (St George's Cross - England) -->
+                                <line x1="30" y1="0" x2="30" y2="40" stroke="#C8102E" stroke-width="4"/>
+                                <line x1="0" y1="20" x2="60" y2="20" stroke="#C8102E" stroke-width="4"/>
+                            </svg> United Kingdom — EV platform development & automotive homologation</li>
+                            <li><svg width="24" height="16" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 0.5rem; vertical-align: middle;">
+                                <rect width="60" height="13.33" fill="#AE1C28"/>
+                                <rect y="13.33" width="60" height="13.33" fill="white"/>
+                                <rect y="26.67" width="60" height="13.33" fill="#33A1FD"/>
+                            </svg> Netherlands — Electric vehicle engineering & technical documentation</li>
+                            <li><svg width="24" height="16" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-right: 0.5rem; vertical-align: middle;">
+                                <rect width="60" height="40" fill="#006AA7"/>
+                                <rect x="16" y="0" width="8" height="40" fill="#FFCD00"/>
+                                <rect x="0" y="16" width="60" height="8" fill="#FFCD00"/>
+                            </svg> Sweden — Marine technology, hydrofoiling systems & structural validation</li>
+                        </ul>
+                    </div>
+
+                    <div class="credentials" style="margin-top: 2rem; background: linear-gradient(135deg, rgba(24, 95, 165, 0.12) 0%, rgba(55, 138, 221, 0.08) 100%); border-left: 4px solid #185fa5;">
+                        <h4>You may have seen me in...</h4>
+                        <p style="margin-bottom: 1rem; color: var(--text); font-size: 0.95rem; line-height: 1.6;">Featured in publications and news covering autonomous racing technology and engineering innovation in high-performance vehicles.</p>
+                        <a href="https://www.upct.es/noticias/2016-05-26-un-ingeniero-mecanico-de-la-upct-participa-en-el-desarrollo-de-un-coche-de-carreras-sin-conductor-" target="_blank" style="display: inline-block; padding: 0.75rem 1.5rem; background-color: #185fa5; color: white; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; transition: background-color 0.3s ease;">
+                            Read Featured Story →
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-highlight">
+                    <div class="highlight-box">
+                        <div class="highlight-number">15+</div>
+                        <div class="highlight-text">Years Experience</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKFLOW VISUAL -->
+    <section style="padding: 5rem 2rem; background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg) 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="container">
+            <div class="section-header">
+                <h2>End-to-End Engineering Excellence</h2>
+                <p>From concept through production and regulatory clearance.</p>
+            </div>
+            <svg viewBox="0 0 1000 300" xmlns="http://www.w3.org/2000/svg" style="width: 100%; max-width: 1000px; margin: 2rem auto; display: block;">
+                <!-- Pipeline -->
+                <defs>
+                    <linearGradient id="pipe-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#185fa5;stop-opacity:0.3" />
+                        <stop offset="50%" style="stop-color:#378add;stop-opacity:0.6" />
+                        <stop offset="100%" style="stop-color:#185fa5;stop-opacity:0.3" />
+                    </linearGradient>
+                </defs>
+                
+                <!-- Connecting line -->
+                <line x1="80" y1="150" x2="920" y2="150" stroke="url(#pipe-grad)" stroke-width="6" stroke-linecap="round"/>
+                
+                <!-- Stage 1: Design -->
+                <circle cx="80" cy="150" r="35" fill="white" stroke="#185fa5" stroke-width="3"/>
+                <text x="80" y="155" text-anchor="middle" font-size="28" fill="#185fa5" font-weight="bold">∑</text>
+                <text x="80" y="200" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)">Design &amp;</text>
+                <text x="80" y="215" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)">Analysis</text>
+                
+                <!-- Stage 2: Documentation -->
+                <circle cx="300" cy="150" r="35" fill="white" stroke="#185fa5" stroke-width="3"/>
+                <text x="300" y="160" text-anchor="middle" font-size="24" fill="#185fa5" font-weight="bold">📋</text>
+                <text x="300" y="200" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)">Documentation</text>
+                <text x="300" y="215" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)">Compliance</text>
+                
+                <!-- Stage 3: Manufacturing -->
+                <circle cx="520" cy="150" r="35" fill="white" stroke="#185fa5" stroke-width="3"/>
+                <text x="520" y="160" text-anchor="middle" font-size="24" fill="#185fa5" font-weight="bold">⚙</text>
+                <text x="520" y="200" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)">Manufacturing</text>
+                <text x="520" y="215" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)">Readiness</text>
+                
+                <!-- Stage 4: Regulatory -->
+                <circle cx="740" cy="150" r="35" fill="white" stroke="#185fa5" stroke-width="3"/>
+                <text x="740" y="160" text-anchor="middle" font-size="24" fill="#185fa5" font-weight="bold">✓</text>
+                <text x="740" y="200" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)">Regulatory</text>
+                <text x="740" y="215" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)">Clearance</text>
+                
+                <!-- Stage 5: Launch -->
+                <circle cx="920" cy="150" r="35" fill="white" stroke="#185fa5" stroke-width="3"/>
+                <path d="M 905 140 L 915 155 L 905 160" fill="#185fa5"/>
+                <text x="920" y="210" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)">Production</text>
+                <text x="920" y="225" text-anchor="middle" font-size="13" font-weight="600" fill="var(--text)">Launch</text>
+            </svg>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Let's Talk</h2>
+                <p>Ready to elevate your engineering? Get in touch.</p>
+            </div>
+            <div class="contact-wrapper">
+                <form name="contact" method="POST" netlify netlify-honeypot="bot-field" class="contact-form">
+                    <input type="hidden" name="bot-field" />
+                    
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Company</label>
+                        <input type="text" name="company" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" name="subject" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <p><a href="mailto:info@seesolutions.com">info@seesolutions.com</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>LinkedIn</h3>
+                        <p><a href="https://www.linkedin.com/company/south-east-engineering-solutions" target="_blank">South East Engineering Solutions</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>Based In</h3>
+                        <p>Europe<br/>Serving clients globally</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>Professional</h3>
+                        <p>COITRM<br/>Colegiado nº 7.137<br/>Professional Liability Insurance (Worldwide)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>South East Engineering Solutions SL</strong></p>
+        <p>Professional Member: COITRM — Colegiado nº 7.137</p>
+        <p style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.2);">&copy; 2026 South East Engineering Solutions SL. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
