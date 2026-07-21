@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="South East Engineering Solutions - Structural FEA, CE Marking, Vehicle Homologation. Engineering expertise from Airbus, Boeing, Formula 1.">
+    <meta name="keywords" content="FEA, CE marking, vehicle homologation, structural analysis, engineering consultancy">
+    <title>South East Engineering Solutions | FEA & CE Marking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: #2c2c2a;
+            background: #fafaf7;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background: #1a1a18;
+                color: #e8e6e0;
+            }
+        }
+
+        header {
+            background: #fff;
+            border-bottom: 1px solid #e5e3db;
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            header {
+                background: #242420;
+                border-bottom: 1px solid #3a3a36;
+            }
+        }
+
+        header nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            color: #185fa5;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #185fa5;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: -0.5px;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #f5f3ed 0%, #fafaf7 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .hero {
+                background: linear-gradient(135deg, #2a2a24 0%, #1a1a18 100%);
+            }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #5f5e5a;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .hero p {
+                color: #a9a9a3;
+            }
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            background: #185fa5;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background: #0c447c;
+        }
+
+        .services {
+            background: #fff;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .services {
+                background: #242420;
+            }
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            border: 1px solid #e5e3db;
+            border-radius: 6px;
+            background: #fafaf7;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .service-card:hover {
+            border-color: #185fa5;
+            box-shadow: 0 2px 8px rgba(24, 95, 165, 0.08);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .service-card {
+                background: #1a1a18;
+                border-color: #3a3a36;
+            }
+
+            .service-card:hover {
+                border-color: #378add;
+                box-shadow: 0 2px 8px rgba(55, 138, 221, 0.15);
+            }
+        }
+
+        .service-card h3 {
+            color: #185fa5;
+            margin-bottom: 1rem;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .service-card h3 {
+                color: #85b7eb;
+            }
+        }
+
+        .about {
+            background: #fafaf7;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .about {
+                background: #1a1a18;
+            }
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: #5f5e5a;
+            font-size: 1.05rem;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .about-content p {
+                color: #a9a9a3;
+            }
+        }
+
+        .about-content strong {
+            color: #2c2c2a;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .about-content strong {
+                color: #e8e6e0;
+            }
+        }
+
+        .contact {
+            background: #fff;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .contact {
+                background: #242420;
+            }
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        input, textarea {
+            padding: 0.875rem;
+            border: 1px solid #d3d1c7;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: #fafaf7;
+            color: #2c2c2a;
+            transition: border-color 0.2s;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            input, textarea {
+                background: #1a1a18;
+                border-color: #3a3a36;
+                color: #e8e6e0;
+            }
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #185fa5;
+            box-shadow: 0 0 0 2px rgba(24, 95, 165, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+            font-family: inherit;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-info {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e3db;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .contact-info {
+                border-top: 1px solid #3a3a36;
+            }
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+        }
+
+        .contact-info a {
+            color: #185fa5;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .contact-info a {
+                color: #85b7eb;
+            }
+        }
+
+        footer {
+            background: #2c2c2a;
+            color: #e8e6e0;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            footer {
+                background: #0a0a08;
+            }
+        }
+
+        .clients {
+            background: #fafaf7;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .clients {
+                background: #1a1a18;
+            }
+        }
+
+        .clients-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .client-item {
+            padding: 1.5rem;
+            background: #fff;
+            border: 1px solid #e5e3db;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .client-item {
+                background: #242420;
+                border-color: #3a3a36;
+            }
+        }
+
+        .success-message {
+            display: none;
+            padding: 1rem;
+            background: #e8f5e9;
+            color: #27500a;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .success-message {
+                background: rgba(99, 153, 34, 0.2);
+                color: #c0dd97;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.25rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            section {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">SEE Solutions</a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Structural FEA, CE Marking, Vehicle Homologation</h1>
+            <p>Engineering consultancy with a 15+ year track record in aerospace, motorsport, and marine sectors.</p>
+            <a href="#contact" class="cta-button">Get in touch</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About</h2>
+            <div class="about-content">
+                <p>South East Engineering Solutions brings deep technical expertise across structural analysis, regulatory documentation, and homologation. Founded by an engineer with experience in <strong>aerospace, automotive, motorsport, renewable energy, and marine sectors</strong>, we specialize in translating complex engineering challenges into compliance and performance.</p>
+                <p>We work with innovators across marine technology, electric vehicles, and industrial design — firms that demand rigorous analysis, meticulous documentation, and regulatory precision. Our strength lies in <strong>end-to-end delivery</strong>: from initial FEA conception through CE marking technical files and homologation sign-off.</p>
+                <p>Based in Murcia, Spain, we serve clients across Europe and beyond, combining hands-on engineering depth with practical commercial awareness.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Structural FEA</h3>
+                    <p>Advanced finite element analysis for tooling, frames, lifting structures, and pressure vessels. We deliver publication-ready stress reports, safety margins, and design optimization across ISO, EN, and client-specific standards.</p>
+                </div>
+                <div class="service-card">
+                    <h3>CE Marking & Technical Documentation</h3>
+                    <p>Complete Machinery Directive compliance: risk assessments, technical files, and conformity certificates. Specializing in welded structures, marine equipment, and industrial lifting — ensuring seamless regulatory clearance.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Vehicle Homologation</h3>
+                    <p>UNECE and Type-Approval pathway support for novel vehicle architectures. We navigate seatbelt, seating, and powertrain compliance — translating design intent into regulatory submissions.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Mechanical Engineering Design</h3>
+                    <p>Comprehensive mechanical design from concept through production. We deliver detailed CAD models, manufacturing specifications, and design-for-manufacturability optimization across tooling, structures, and assemblies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-content">
+                <div class="success-message" id="successMessage">
+                    Thank you for your message. We'll get back to you shortly.
+                </div>
+                <form name="contact" method="POST" netlify netlify-honeypot="bot-field">
+                    <input type="hidden" name="bot-field" />
+                    <div class="form-row">
+                        <input type="text" name="name" placeholder="Your name" required />
+                        <input type="email" name="email" placeholder="Your email" required />
+                    </div>
+                    <input type="text" name="company" placeholder="Company (optional)" />
+                    <input type="text" name="subject" placeholder="Subject" required />
+                    <textarea name="message" placeholder="Your message" required></textarea>
+                    <button type="submit" class="cta-button">Send message</button>
+                </form>
+
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a href="mailto:info@seesolutions.com">info@seesolutions.com</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/company/south-east-engineering-solutions" target="_blank">South East Engineering Solutions</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 South East Engineering Solutions. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(e) {
+            setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'block';
+                document.querySelector('form').reset();
+                setTimeout(function() {
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 5000);
+            }, 500);
+        });
+    </script>
+</body>
+</html>
